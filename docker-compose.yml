@@ -1,3 +1,3 @@
 eis:
-	container_name: eis
-	image: learninglayers/eis:0.0.1
+  container_name: eis
+  image: ogut/eis:0.0.1
