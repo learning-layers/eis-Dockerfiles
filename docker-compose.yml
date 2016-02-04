@@ -4,5 +4,5 @@ eis:
   links:
     - mysql
   actions:
-    -create_databases:
-      -eis.env
+    - create_databases:
+      - eis.env
