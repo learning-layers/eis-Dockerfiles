@@ -5,4 +5,5 @@ eis:
     - mysql
   actions:
     - create_databases:
+      - common.env
       - eis.env
