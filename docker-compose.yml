@@ -1,3 +1,8 @@
 eis:
   container_name: eis
   image: ogut/eis:0.0.1
+  links:
+    - mysql
+  actions:
+    -create_databases:
+      -eis.env
