@@ -31,14 +31,8 @@ RUN wget -O EIS.zip https://www.dropbox.com/s/q50rn0271p7qv3l/EIS.zip?dl=1 \
 # add content to data volumes
 ADD etc EIS/etc
 
-# do necessary replacements by environment variable values
-CMD sed -i "s#EIS_DB_NAME#${EIS_DB_NAME}#g" /EIS/etc/system.ers.properties && \
-	sed -i "s#EIS_DB_USER#${EIS_DB_USER}#g" /EIS/etc/system.ers.properties && \
-	sed -i "s#EIS_DB_PASS#${EIS_DB_PASS}#g" /EIS/etc/system.ers.properties
-
-RUN chmod u+x EIS/bin/start_network.sh
-
-WORKDIR "/EIS"
-CMD ./bin/start_network.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
 
 EXPOSE 8080
