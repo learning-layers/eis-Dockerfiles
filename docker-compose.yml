@@ -3,7 +3,9 @@ eis:
   image: ogut/eis:0.0.1
   links:
     - mysql
+  env_file:
+    - common.env
+    - eis.env
   actions:
     - create_databases:
-      - common.env
       - eis.env
