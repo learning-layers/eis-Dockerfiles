@@ -9,3 +9,13 @@ eis:
   actions:
     - create_databases:
       - eis.env
+    - create_oidcclients:
+      - eis.env
+
+
+eisfrontend:
+    container_name: eisfrontend
+    image: ogut/eis-frontend:0.0.1
+    env_file:
+        - common.env
+        - eis.env

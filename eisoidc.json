@@ -1,0 +1,19 @@
+{
+'application_type':'web',
+'redirect_uris':['LAYERS_API_URIeisfrontend/'],
+'client_name':'EIS',
+"contacts": [
+    "ogut@dbis.rwth-aachen.de"
+  ],
+  "tos_uri": null,
+  "token_endpoint_auth_method": "client_secret_basic",
+  "scope": "openid email profile",
+  "grant_types": [
+    "implicit"
+  ],
+  "response_types": [
+    "id_token",
+    "token id_token",
+    "token"
+  ]
+}
