@@ -10,6 +10,7 @@ sed -i "s#EIS_DB_PASS#${EIS_DB_PASS}#g" /etc/system.ers.properties
 echo "conf printout ...."
 cat /etc/system.ers.properties
 
-chmod u+x /bin/start_network.sh
+chmod u+x bin/start_network.sh
+sleep 0.01 # just for avoid 'text file busy' error
 
 bin/start_network.sh
