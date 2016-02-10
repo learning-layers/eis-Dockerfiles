@@ -14,8 +14,8 @@ eis:
 
 
 eisfrontend:
-    container_name: eisfrontend
-    image: ogut/eis-frontend:0.0.1
-    env_file:
-        - common.env
-        - eis.env
+  container_name: frontendeis
+  image: ogut/frontendeis:0.0.1
+  env_file:
+    - common.env
+    - eis.env
