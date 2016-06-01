@@ -25,8 +25,10 @@ RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=acc
   && rm -r UnlimitedJCEPolicyJDK8 && rm jce_policy-8.zip
 
 # Download the service
-RUN wget -O EIS.zip https://www.dropbox.com/s/q50rn0271p7qv3l/EIS.zip?dl=1 \
+RUN wget -O EIS.zip http://layers.dbis.rwth-aachen.de/jenkins/job/Expert-Identification-Service/lastSuccessfulBuild/artifact/*zip*/archive.zip \
   && unzip EIS.zip
+  
+RUN mv archive EIS
 
 # add content to data volumes
 ADD etc EIS/etc
