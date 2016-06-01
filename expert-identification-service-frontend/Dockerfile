@@ -7,9 +7,11 @@ RUN apt-get -qqy --no-install-recommends install \
     wget \
     unzip
 
-RUN wget -O EIS_Frontend.zip https://www.dropbox.com/s/hgmrql6ozaufigt/EIS_Frontend.zip?dl=1 \
+RUN wget -O EIS_Frontend.zip http://layers.dbis.rwth-aachen.de/jenkins/job/Expert-Identification-Service/lastSuccessfulBuild/artifact/*zip*/archive.zip \
   && unzip EIS_Frontend.zip
-RUN mv EIS_Frontend /usr/share/nginx/html/eis-frontend
+RUN mv archive/frontend /usr/share/nginx/html/eis-frontend
+RUN rm -rf archive
+RUN rm -rf EIS_Frontend.zip
 WORKDIR /usr/share/nginx/html/eis-frontend
 
 # Provide default port if random port mapping invoked
