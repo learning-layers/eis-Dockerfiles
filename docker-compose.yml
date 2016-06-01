@@ -1,6 +1,6 @@
 eis:
   container_name: eis
-  image: ogut/eis:0.0.1
+  image: robbani/eis:0.0.1
   links:
     - mysql
   env_file:
@@ -15,7 +15,7 @@ eis:
 
 eisfrontend:
   container_name: frontendeis
-  image: ogut/frontendeis:0.0.1
+  image: robbani/frontendeis:0.0.1
   env_file:
     - common.env
     - eis.env
